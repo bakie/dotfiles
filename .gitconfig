@@ -21,6 +21,8 @@
 [user]
 	name = Bakie
 	email = bakelants.developer@gmail.com
+[includeIf "gitdir:~/work_projects/"]
+  path = ~/work_projects/.gitconfig
 [alias]
     history = log --graph --pretty=format:'%Cgreen%h %C(bold blue)%<(20)%an%Creset%C(bold green)%<(15)%cr %Creset%s'
     today = log --since=\"1 day ago\" --author=\"`git config user.name`\" --pretty=oneline
