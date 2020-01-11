@@ -1,0 +1,50 @@
+# none, visible or audible
+set bell-style none
+
+# attempts to briefly move the cursor to an opening parenthesis when a closing
+# parenthesis is inserted.
+set blink-matching-paren On
+
+# Make Tab autocomplete regardless of filename case
+set completion-ignore-case On
+
+# Query if we want to view more if the possible completions are greater than 50
+set completion-query-items 50
+
+# Set vi editing mode
+set editing-mode vi
+
+# Set the size of history
+set history-size 20000
+
+# Make sure we don't output everything on the 1 line
+set horizontal-scroll-mode Off
+
+# Allow UTF-8 input and output, instead of showing stuff like $'\0123\0456'
+set convert-meta Off
+set input-meta On
+set meta-flag On 
+set output-meta On
+
+set keymap vi-insert
+# Use the text that has already been typed as the prefix for searching through
+# commands (i.e. more intelligent Up/Down behaviour)
+"\e[A": history-search-backward # up-arrow
+"\e[B": history-search-forward  # down-arrow
+Control-l: clear-screen
+
+# Show hidden files) when performing filename completion
+set match-hidden-files On
+
+# Show the --more-- when possible completions
+set page-completions On
+
+# Add a character to the beginning of the prompt indicating the editing mode
+set show-mode-in-prompt On
+
+# Be more intelligent when autocompleting by also looking at the text after
+# the cursor. For example, when the current line is "cd ~/src/mozil", and
+# the cursor is on the "z", pressing Tab will not autocomplete it to "cd
+# ~/src/mozillail", but to "cd ~/src/mozilla".
+set skip-completed-text On
+
