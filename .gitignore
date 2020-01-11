@@ -1,0 +1,9 @@
+## JetBrains IDEs
+*.iml
+## Directory-based project format:
+.idea/
+## Ignore mac's DS_Store
+.DS_Store
+
+*~
+.*.swp

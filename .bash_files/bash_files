@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+BASH_FILES_DIR=~/.bash_files
+BASH_FILES_TO_LOAD_ORDER=(git_helpers bash_colors bash_prompt)
+
+for BASH_FILE in ${BASH_FILES_TO_LOAD_ORDER[*]}; do
+  if [[ -f ${BASH_FILES_DIR}/${BASH_FILE} ]]; then
+    source ${BASH_FILES_DIR}/${BASH_FILE}
+  fi
+done

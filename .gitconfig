@@ -1,0 +1,26 @@
+[apply]
+    ignorewhitespace = change
+    whitespace = nowarn
+[commit]
+    g0gsign = true
+[core]
+  ignorecase = true
+  editor = vim
+  pager = less
+	fileMode = false
+	excludesfile = ~/.gitignore
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[diff]
+    tool = vimdiff
+[gpg]
+    program = gpg
+[help]
+    autocorrect = 1
+[merge]
+    conflictStyle = diff3
+[user]
+	name = Bakie
+	email = bakelants.developer@gmail.com
+[alias]
+    history = log --graph --pretty=format:'%Cgreen%h %C(bold blue)%<(20)%an%Creset%C(bold green)%<(15)%cr %Creset%s'
+    today = log --since=\"1 day ago\" --author=\"`git config user.name`\" --pretty=oneline

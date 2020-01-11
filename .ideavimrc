@@ -1,0 +1,42 @@
+source ~/.vimrc
+
+" Navigate through completion pop-up by using <C-p> and <C-n>
+
+" Move
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
+nnoremap <C-h> :action Back<CR>
+nnoremap <C-j> :action NextTab<CR>
+nnoremap <C-k> :action PreviousTab<CR>
+nnoremap <C-l> :action Forward<CR>
+
+" Goto
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gc :action GotoClass<CR>
+nnoremap gf :action GotoFile<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gt :action GotoTypeDeclaration<CR>
+nnoremap gS :action GotoSuperMethod<CR>
+nnoremap gs :action GotoSymbol<CR>
+
+" Find/Search
+nnoremap ff :action Find<CR>
+nnoremap fp :action FindInPath<CR>
+nnoremap fu :action FindUsages<CR>
+nnoremap se :action SearchEverywhere<CR>
+nnoremap fs :action FileStructurePopup<CR>
+
+" Replace
+nnoremap rr :action Replace<CR>
+nnoremap rp :action ReplaceInPath<CR>
+
+" Refactor
+nnoremap =rn :action RenameElement<CR>
+
+" Generate
+nnoremap ,ga :action Generate<CR>
+nnoremap ,go :action OverrideMethods<CR>
+nnoremap ,gg :action GenerateGetter<CR>
+nnoremap ,gs :action GenerateSetter<CR>
+nnoremap ,gb :action GenerateGetterAndSetter<CR>
+nnoremap ,gi :action ImplementMethods<CR>
