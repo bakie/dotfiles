@@ -22,6 +22,11 @@ if [[ -d ~/.bash_completion && -f ~/.bash_completion/bash_completion ]]; then
   source ~/.bash_completion/bash_completion
 fi
 
+# Load the aliases files
+if [[ -d ~/.bash_aliases && -f ~/.bash_aliases/bash_aliases ]]; then
+  source ~/.bash_aliases/bash_aliases
+fi
+
 if [[ -f ~/.bash_osx ]]; then
   source ~/.bash_osx
 fi
@@ -33,4 +38,3 @@ if [ -x "$(command -v cowsay)" -a -x "$(command -v fortune)" ]; then
   fortune | cowsay -f ${OPTION}
 fi
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
