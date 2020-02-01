@@ -32,7 +32,6 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 If we would perform a checkout (dotfiles checkout) at this point it will probably fail because your $HOME directory will contain files like .bashrc etc. We will first need to backup (or remove) the files.
 ```
 mkdir $HOME/.dotfiles_backup
-mkdir -p .dotfiles_backup
 dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles_backup/{}
 ```
 Note: if you want to remove the files without backing them up, you can replace the xargs command with the following `xargs rm`.
