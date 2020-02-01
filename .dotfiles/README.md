@@ -1,5 +1,5 @@
 # Keep dotfiles in your $HOME dir and use a a bare Git repository.
-This method is taken from (here)[https://www.atlassian.com/git/tutorials/dotfiles] and (here)[https://news.ycombinator.com/item?id=11070797]. The basic idea is to keep your dotfile in their original location (mainly $HOME) and avoid symlinks entirely. This is done by creating a base repository and set the work-tree to be the $HOME directory. When we want to add a new config file to the repository we specify the work-tree as $HOME (this is made easier with an alias command). This keeps the files at their original location and allows for using different branches on different computers (Linux vs osx).
+This method is taken from [here](https://www.atlassian.com/git/tutorials/dotfiles) and [here](https://news.ycombinator.com/item?id=11070797). The basic idea is to keep your dotfile in their original location (mainly $HOME) and avoid symlinks entirely. This is done by creating a base repository and set the work-tree to be the $HOME directory. When we want to add a new config file to the repository we specify the work-tree as $HOME (this is made easier with an alias command). This keeps the files at their original location and allows for using different branches on different computers (Linux vs osx).
 
 ## Scratch setup
 ```
