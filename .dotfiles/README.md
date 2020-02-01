@@ -38,7 +38,7 @@ Note: if you want to remove the files without backing them up, you can replace t
 Now we can run the checkout and set the showUntrackedFiles flag off for this repository
 ```
 dotfiles checkout
-dotfiles config --local showUntrackedFiles no
+dotfiles config --local status.showUntrackedFiles no
 ```
 
 That is it. You can now add/update/remove files from your dotfiles.
