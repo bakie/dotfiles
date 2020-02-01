@@ -23,7 +23,7 @@ dotfiles push
 ## Install to a new machine
 First clone the bare repository
 ```
-git clone --bare <git-repo-url> $HOME/.cfg
+git clone --bare <git-repo-url> $HOME/.dotfiles
 ```
 Define the alias in the current shell scope:
 ```
@@ -32,14 +32,13 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 If we would perform a checkout (dotfiles checkout) at this point it will probably fail because your $HOME directory will contain files like .bashrc etc. We will first need to backup (or remove) the files.
 ```
 mkdir $HOME/.dotfiles_backup
-mkdir -p .dotfiles_backup
 dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles_backup/{}
 ```
 Note: if you want to remove the files without backing them up, you can replace the xargs command with the following `xargs rm`.
 Now we can run the checkout and set the showUntrackedFiles flag off for this repository
 ```
 dotfiles checkout
-dotfiles config --local showUntrackedFiles no
+dotfiles config --local status.showUntrackedFiles no
 ```
 
 That is it. You can now add/update/remove files from your dotfiles.
