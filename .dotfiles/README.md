@@ -23,7 +23,7 @@ dotfiles push
 ## Install to a new machine
 First clone the bare repository
 ```
-git clone --bare <git-repo-url> $HOME/.cfg
+git clone --bare <git-repo-url> $HOME/.dotfiles
 ```
 Define the alias in the current shell scope:
 ```
