@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BASH_COMPLETION_DIR=~/.bash_completion
+BASH_COMPLETION_DIR=$HOME/.bash_completion
 
 for BASH_FILE in ${BASH_COMPLETION_DIR}/*.bash; do
   source ${BASH_FILE}
