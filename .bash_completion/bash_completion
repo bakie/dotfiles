@@ -5,3 +5,9 @@ BASH_COMPLETION_DIR=$HOME/.bash_completion
 for BASH_FILE in ${BASH_COMPLETION_DIR}/*.bash; do
   source ${BASH_FILE}
 done
+
+if [[ -f /etc/bash_completion ]]; then
+  # We set the BASH_COMPLETION_USER_FILE so the system bash_completion doesn't try to load the default ~/.bash_completion as this is a directory (~L2012 in /usr/share/bash-completion/bash_completion)
+  BASH_COMPLETION_USER_FILE="/usr/share/bash-completion/bash_completion"
+  source /etc/bash_completion
+fi
