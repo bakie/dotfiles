@@ -13,22 +13,22 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 # Load the bash files
-if [[ -d ~/.bash_files && -f ~/.bash_files/bash_files ]]; then
-  source ~/.bash_files/bash_files
+if [[ -d $HOME/.bash_files && -f $HOME/.bash_files/bash_files ]]; then
+  source $HOME/.bash_files/bash_files
 fi
 
 # Load the completion files
-if [[ -d ~/.bash_completion && -f ~/.bash_completion/bash_completion ]]; then
-  source ~/.bash_completion/bash_completion
+if [[ -d $HOME/.bash_completion && -f $HOME/.bash_completion/bash_completion ]]; then
+  source $HOME/.bash_completion/bash_completion
 fi
 
 # Load the aliases files
-if [[ -d ~/.bash_aliases && -f ~/.bash_aliases/bash_aliases ]]; then
-  source ~/.bash_aliases/bash_aliases
+if [[ -d $HOME/.bash_aliases && -f $HOME/.bash_aliases/bash_aliases ]]; then
+  source $HOME/.bash_aliases/bash_aliases
 fi
 
-if [[ -f ~/.bash_osx ]]; then
-  source ~/.bash_osx
+if [[ -f $HOME/.bash_osx ]]; then
+  source $HOME/.bash_osx
 fi
 
 # Show cowsay with fortune at every new terminal
@@ -38,6 +38,17 @@ if [ -x "$(command -v cowsay)" -a -x "$(command -v fortune)" ]; then
   fortune | cowsay -f ${OPTION}
 fi
 
+# pyenv
+if [[ -d $HOME/.pyenv ]]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+fi
+
 if [ -x "$(command -v pyenv)" ]; then
   eval "$(pyenv init -)"
+fi
+
+# poetry
+if [[ -d $HOME/.poetry ]]; then
+  export PATH="$HOME/.poetry/bin:$PATH"
 fi
