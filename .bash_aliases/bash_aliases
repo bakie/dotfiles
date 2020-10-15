@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-BASH_ALIASES_DIR=$HOME/.bash_aliases
-
-for BASH_FILE in ${BASH_ALIASES_DIR}/*.bash; do
-  source ${BASH_FILE}
-done

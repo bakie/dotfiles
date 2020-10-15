@@ -3,6 +3,9 @@
 # If not running interactively, don't do anything
 [[ $- == *i* ]] || return
 
+# Path to the bash configuration dir
+export BASH_CONFIG_PATH="$HOME/.bash_config"
+
 # Don't check mail when opening terminal.
 unset MAILCHECK
 
@@ -11,25 +14,6 @@ unset MAILCHECK
 # Set vim as default editor for everything
 export VISUAL=vim
 export EDITOR="$VISUAL"
-
-# Load the bash files
-if [[ -d $HOME/.bash_files && -f $HOME/.bash_files/bash_files ]]; then
-  source $HOME/.bash_files/bash_files
-fi
-
-# Load the completion files
-if [[ -d $HOME/.bash_completion && -f $HOME/.bash_completion/bash_completion ]]; then
-  source $HOME/.bash_completion/bash_completion
-fi
-
-# Load the aliases files
-if [[ -d $HOME/.bash_aliases && -f $HOME/.bash_aliases/bash_aliases ]]; then
-  source $HOME/.bash_aliases/bash_aliases
-fi
-
-if [[ -f $HOME/.bash_osx ]]; then
-  source $HOME/.bash_osx
-fi
 
 # Show cowsay with fortune at every new terminal
 if [ -x "$(command -v cowsay)" -a -x "$(command -v fortune)" ]; then
@@ -52,3 +36,5 @@ fi
 if [[ -d $HOME/.poetry ]]; then
   export PATH="$HOME/.poetry/bin:$PATH"
 fi
+
+source "$BASH_CONFIG_PATH/load_config.sh"
