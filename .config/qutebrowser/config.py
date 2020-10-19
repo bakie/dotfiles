@@ -29,4 +29,4 @@ config.bind('<Ctrl-k>', 'tab-prev')
 config.bind('<Ctrl-l>', 'forward')
 config.bind('H', 'home')
 ## Userscript binds`
-config.bind('<Ctrl-p>', 'spawn --userscript qute-bitwarden-osx -d /usr/local/bin/choose')
+config.bind('<Ctrl-p>', 'spawn --userscript qute-bitwarden')
