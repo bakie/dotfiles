@@ -7,7 +7,7 @@ for _bash_config_file in $LIB; do
 done
 
 # Load the completion and aliases
-for type in "completion" "aliases"; do
+for type in "completion" "aliases" "plugins"; do
   for _bash_config_file in $(sort <(compgen -G "$BASH_CONFIG_PATH/$type/*.bash")); do
     source "$_bash_config_file"
   done

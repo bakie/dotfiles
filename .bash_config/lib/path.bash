@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 function pathmunge() {
-  about "prevent duplicate directories in the PATH variable and only add paths that exist"
-
-  if ! [[ $PATH =~ (^|:)$1($|:) ]] && [[ -d $1 ]] ; then
+  if ! [[ $PATH =~ (^|:)$1($|:) ]] && [[ -d $1 ]]; then
     if [ "$2" = "after" ] ; then
        PATH=$PATH:$1
     else
