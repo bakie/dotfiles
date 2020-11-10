@@ -21,5 +21,5 @@ for _bash_config_file in $THEME_HELPERS; do
 done
 source "$BASH_CONFIG_PATH/theme/appearance.theme.bash"
 
-unset _bash_config_file
+unset _bash_config_file type
 
