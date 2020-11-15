@@ -27,3 +27,9 @@
 [alias]
     history = log --graph --pretty=format:'%Cgreen%h %C(bold blue)%<(20)%an%Creset%C(bold green)%<(15)%cr %Creset%s'
     today = log --since=\"1 day ago\" --author=\"`git config user.name`\" --pretty=oneline
+    st = status --short
+    br = branch
+    co = checkout
+    df = diff
+    lg = log --pretty=fuller --abbrev-commit --stat
+
