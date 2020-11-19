@@ -35,10 +35,11 @@ mkdir $HOME/.dotfiles_backup
 dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles_backup/{}
 ```
 Note: if you want to remove the files without backing them up, you can replace the xargs command with the following `xargs rm`.
-Now we can run the checkout and set the showUntrackedFiles flag off for this repository
+Now we can run the checkout and set the showUntrackedFiles flag off for this repository. We also need to fetch the submodules.
 ```
 dotfiles checkout
 dotfiles config --local status.showUntrackedFiles no
+dotfiles submodule update --init --recursive
 ```
 
 That is it. You can now add/update/remove files from your dotfiles.
