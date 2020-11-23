@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
 if [ -x "$(command -v cowsay)" -a -x "$(command -v fortune)" ]; then
-  OPTIONS=(`cowsay -l | tail -n +2`)
-  OPTION=${OPTIONS[$RANDOM % ${#OPTIONS[@]}]}
-  fortune | cowsay -f ${OPTION}
+  if [[ $(uname) = "Darwin" ]]; then
+    COWS_PATH="/usr/local/Cellar/cowsay/3.04/share/cows"
+  else
+    COWS_PATH="/usr/share/cowsay/cows"
+  fi
+  fortune | cowsay -f $(ls $COWS_PATH | shuf -n 1)
 fi
 
