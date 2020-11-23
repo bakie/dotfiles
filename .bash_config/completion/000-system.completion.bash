@@ -10,7 +10,7 @@ fi
 
 
 if [[ $(uname) = "Darwin" ]] && command -v brew &>/dev/null ; then
-  BREW_PREFIX=$(brew --prefix)
+  BREW_PREFIX="/usr/local"
 
   if [[ -f "$BREW_PREFIX"/etc/bash_completion ]]; then
     source "$BREW_PREFIX"/etc/bash_completion
