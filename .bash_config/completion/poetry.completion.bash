@@ -1,4 +1,6 @@
-_poetry_97355cdde3343c81_complete()
+#!/usr/bin/env bash
+
+_poetry_complete()
 {
     local cur script coms opts com
     COMPREPLY=()
@@ -136,5 +138,25 @@ _poetry_97355cdde3343c81_complete()
     fi
 }
 
-complete -o default -F _poetry_97355cdde3343c81_complete poetry
-complete -o default -F _poetry_97355cdde3343c81_complete /home/ikke/.poetry/bin/poetry
+__ltrim_colon_completions() {
+    # If word-to-complete contains a colon,
+    # and bash-version < 4,
+    # or bash-version >= 4 and COMP_WORDBREAKS contains a colon
+    if [[
+        "$1" == *:* && (
+            ${BASH_VERSINFO[0]} -lt 4 || 
+            (${BASH_VERSINFO[0]} -ge 4 && "$COMP_WORDBREAKS" == *:*) 
+        )
+    ]]; then
+        # Remove colon-word prefix from COMPREPLY items
+        local colon_word=${1%${1##*:}}
+        local i=${#COMPREPLY[*]}
+        while [ $((--i)) -ge 0 ]; do
+            COMPREPLY[$i]=${COMPREPLY[$i]#"$colon_word"}
+        done
+    fi
+} # __ltrim_colon_completions()
+
+
+complete -o default -F _poetry_complete poetry
+complete -o default -F _poetry_complete /home/ikke/.poetry/bin/poetry
