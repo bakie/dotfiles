@@ -6,6 +6,6 @@ if [ -x "$(command -v cowsay)" -a -x "$(command -v fortune)" ]; then
   else
     COWS_PATH="/usr/share/cowsay/cows"
   fi
-  fortune | cowsay -f $(ls $COWS_PATH | shuf -n 1)
+  fortune | cowsay -f $(ls $COWS_PATH | grep .cow$ | shuf -n 1)
 fi
 
