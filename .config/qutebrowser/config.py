@@ -30,3 +30,7 @@ config.bind('<Ctrl-l>', 'forward')
 config.bind('H', 'home')
 ## Userscript binds`
 config.bind('<Ctrl-p>', 'spawn --userscript qute-bitwarden')
+
+# Set default page (e.g. when opening a new empty tab with -t) and start page (when opening qutebrowser) to daily.dev
+c.url.default_page = 'https://app.daily.dev/'
+c.url.start_pages = 'https://app.daily.dev/'
