@@ -23,8 +23,9 @@ set smartcase                                              " Override 'ignorecas
 set tabstop=2                                              " The number of spaces that a <Tab> counts for
 set wildmenu                                               " Enable command-line completion
 set wrap                                                   " Wrap long lines
-set ttimeout                                                " Timeout key sequences
+set ttimeout                                               " Timeout key sequences
 set ttimeoutlen=50                                         " Timout after 50 milliseconds
+set hidden                                                 " Hide buffers when they are abandoned (prevents vim from asking to save a buffer when switching buffers)
 
 set laststatus=2                                           " Show statusbar all the time
 set statusline=                                            " Custom status line
