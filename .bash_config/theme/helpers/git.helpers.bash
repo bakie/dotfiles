@@ -2,7 +2,10 @@
 
 function git_prompt_vars {
   if _git-branch &> /dev/null; then
-    GIT_BRANCH="$(_git-friendly-ref)$(_git-remote-info)"
+    GIT_BRANCH="$(_git-friendly-ref)"
+    local remote
+    remote="$(_git-remote-info)"
+    [[ "${remote}" ]] && GIT_BRANCH+="-${remote}"
   else
     local detached_prefix
     if _git-tag &> /dev/null; then
@@ -126,7 +129,6 @@ function _git-remote-info {
   local same_branch_name=
   [[ "$(_git-branch)" == "$(_git-upstream-branch)" ]] && same_branch_name=true
   if [[ "$(_git-num-remotes)" -ge 2 ]]; then
-    echo "hello"
     if [[ "${same_branch_name}" != "true" ]]; then
       remote_info="\$(_git-upstream)"
     else
