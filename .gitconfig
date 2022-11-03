@@ -2,15 +2,14 @@
     ignorewhitespace = change
     whitespace = nowarn
 [commit]
-    g0gsign = true
+    gpgsign = true
 [core]
-  ignorecase = true
-  editor = vim
-  pager = less
-	fileMode = false
-	excludesfile = ~/.gitignore
-	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-  hookspath = ~/.githooks
+    ignorecase = true
+    editor = vim
+    pager = less
+    fileMode = false
+    excludesfile = ~/.gitignore
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [diff]
     tool = vimdiff
 [gpg]
@@ -20,10 +19,12 @@
 [merge]
     conflictStyle = diff3
 [user]
-	name = Bakie
-	email = bakelants.developer@gmail.com
-[includeIf "gitdir:~/work_projects/"]
-  path = ~/work_projects/.gitconfig
+    name = Bakie
+    email = bakelants.developer@gmail.com
+[includeIf "gitdir:~/work_projects/mensura/klantenzone-cms"]
+    path = ~/work_projects/.gitconfig
+[includeIf "gitdir:~/work_projects/mensura/klantenzone-web-app"]
+    path = ~/work_projects/.gitconfig
 [alias]
     history = log --graph --pretty=format:'%Cgreen%h %C(bold blue)%<(20)%an%Creset%C(bold green)%<(15)%cr %Creset%s'
     today = log --since=\"1 day ago\" --author=\"`git config user.name`\" --pretty=oneline
@@ -32,4 +33,4 @@
     co = checkout
     df = diff
     lg = log --pretty=fuller --abbrev-commit --stat
-
+        

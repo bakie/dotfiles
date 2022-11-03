@@ -49,3 +49,16 @@ nnoremap L $
 
 " Alias for saving when not editing as sudo
 cmap w!! %!sudo tee > /dev/null %
+
+" Enable the detection, plugin and indent
+" https://vimdoc.sourceforge.net/htmldoc/filetype.html#:filetype-overview
+filetype plugin indent on
+
+" Automatically insert the matching parentheses, braces and brackets
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O

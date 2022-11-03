@@ -1,9 +1,42 @@
-## JetBrains IDEs
+## Ansible
+*.retry
+ 
+## Composer
+composer.phar
+/vendor/
+ 
+## JetBrains
+.idea/*
 *.iml
-## Directory-based project format:
-.idea/
-## Ignore mac's DS_Store
+out/
+ 
+## macOS
 .DS_Store
-
+**/.DS_Store
+ 
+## Node
+node_modules/
+npm-debug.log
+yarn-error.log
+ 
+## Python
+__pycache__/
+*.py[cod]
+*$py.class
+ 
+## Terraform
+**/.terraform/*
+ 
+## Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
 *~
-.*.swp
+ 
+## VisualStudioCode
+.vscode/*
+.history/
+*.vsix
+
